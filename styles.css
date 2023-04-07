@@ -1,0 +1,195 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: "Neue Machina";
+}
+
+.hero-section {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #e3e3e3;
+}
+
+.hero-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 50%;
+    background: url(hero-img.jpg) no-repeat 50% 50%;
+    background-size: cover;
+}
+
+.brand-logo {
+    position: fixed;
+    top: 80px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+ion-icon {
+    font-size: 40px;
+}
+
+.open-menu,
+.close-menu {
+    position: absolute;
+    margin: 2em;
+    right: 0;
+}
+
+.menu-container {
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+    right: -50%;
+    z-index: 2;
+    background: red;
+}
+
+.menu-links {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.menu-links .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #000;
+    margin: 4px 0;
+    padding: 30px 0 16px 0;
+}
+
+.menu-links .link a {
+    font-size: 64px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: white;
+}
+
+.social-media {
+    position: fixed;
+    bottom: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.social-media .link a {
+    margin: 20px;
+    color: black;
+}
+
+@media (max-width: 900px) {
+    .menu-container {
+        width: 100%;
+        right: -100%;
+    }
+
+    .brand-logo {
+        width: 100%;
+    }
+
+    .menu-links .link a {
+        font-size: 24px;
+        padding: 10px 0 16px 0;
+    }
+
+    .social-media {
+        width: 100%;
+    }
+
+    .menu-links .menu-link-1 a::after,
+    .menu-links .menu-link-2 a::after,
+    .menu-links .menu-link-3 a::after,
+    .menu-links .menu-link-4 a::after {
+        display: none;
+    }
+}
+
+.menu-links .menu-link-1 a::after {
+    content: url("menu-link-1.png");
+    position: absolute;
+    top: 5%;
+    right: -20px;
+}
+
+.menu-links .menu-link-2 a::after {
+    content: url("menu-link-2.png");
+    position: absolute;
+    top: 30%;
+    left: -20px;
+}
+
+.menu-links .menu-link-3 a::after {
+    content: url("menu-link-3.png");
+    position: absolute;
+    top: 50%;
+    right: -20px;
+}
+
+.menu-links .menu-link-4 a::after {
+    content: url("menu-link-4.png");
+    position: absolute;
+    top: 75%;
+    left: -20px;
+}
+
+.menu-links .menu-link-1:hover a::after,
+.menu-links .menu-link-2:hover a::after,
+.menu-links .menu-link-3:hover a::after,
+.menu-links .menu-link-4:hover a::after {
+    animation-name: tada;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes tada {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    10%,
+    20% {
+        transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+    40%,
+    60%,
+    80% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}

@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Brutal Naigation Using GSAP</title>
+        <link rel="stylesheet" href="styles.css" />
+
+        <!-- external stylesheet -->
+        <link rel="stylesheet" href="styles.css" />
+
+        <!-- ionicons -->
+        <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+        <!-- GSAP -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="hero-section">
+                <div class="open-menu"><ion-icon name="menu-outline"></ion-icon></div>
+                <div class="hero-img"></div>
+            </div>
+            <div class="menu-container">
+                <div class="close-menu"><ion-icon name="close-outline"></ion-icon></div>
+                <div class="brand-logo">
+                    <div class="logo">
+                        The Studio
+                    </div>
+                </div>
+                <div class="menu-links">
+                    <div class="link menu-link-1">
+                        <a href="#">Home</a>
+                    </div>
+                    <div class="link menu-link-2">
+                        <a href="#">The Studio</a>
+                    </div>
+                    <div class="link menu-link-3">
+                        <a href="#">About</a>
+                    </div>
+                    <div class="link menu-link-4">
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+                <div class="social-media">
+                    <div class="link">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    </div>
+                    <div class="link">
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    </div>
+                    <div class="link">
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    </div>
+                    <div class="link">
+                        <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var t1 = new TimelineMax({ paused: true });
+
+            t1.to(".menu-container", 0.4, {
+                right: "0%",
+            });
+
+            t1.staggerFrom(".link", 0.4, { opacity: 0 }, 0.1, "-=0.2");
+
+            t1.reverse();
+            $(document).on("click", ".open-menu", function () {
+                t1.reversed(!t1.reversed());
+            });
+            $(document).on("click", ".close-menu", function () {
+                t1.reversed(!t1.reversed());
+            });
+        </script>
+    </body>
+</html>
